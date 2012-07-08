@@ -1,5 +1,10 @@
-morse (0.0.1) unstable; urgency=low
+kejml-morse (1.0.0) unstable; urgency=low
+  * First public release
 
+ -- unknown <>  Sun, 08 Jul 2012 23:00:41 +0200
+
+
+kejml-morse (0.0.1) unstable; urgency=low
   * Basic functionality
 
  -- unknown <>  Sun, 08 Jul 2012 13:37:37 +0000
