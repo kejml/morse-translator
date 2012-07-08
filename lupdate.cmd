@@ -1,0 +1,1 @@
+lupdate qml\ -ts i18n/morse_cs.ts

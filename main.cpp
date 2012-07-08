@@ -1,9 +1,19 @@
 #include <QtGui/QApplication>
 #include "qmlapplicationviewer.h"
+#include <QTranslator> // include QTranslator
+#include <QLocale> // include QLocale
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     QScopedPointer<QApplication> app(createApplication(argc, argv));
+
+    QLocale  locale; // A locale instance
+
+    // Load .qm translation file of the language currently set in system settings
+    QTranslator translator;
+    translator.load(QString("i18n/morse_") + locale.name().split('_').first(),":/");
+
+    app->installTranslator(&translator);
 
     QmlApplicationViewer viewer;
     viewer.setOrientation(QmlApplicationViewer::ScreenOrientationAuto);

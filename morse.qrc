@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>i18n/morse_cs.qm</file>
+    </qresource>
+</RCC>

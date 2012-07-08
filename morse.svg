@@ -19,7 +19,10 @@
    id="ORANGE_BACKGROUNDS"
    xml:space="preserve"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="morse.svg"><sodipodi:namedview
+   sodipodi:docname="morse.svg"
+   inkscape:export-filename="C:\dev\ostatni\Qt\morse\morse64.png"
+   inkscape:export-xdpi="60"
+   inkscape:export-ydpi="60"><sodipodi:namedview
    pagecolor="#ffffff"
    bordercolor="#666666"
    borderopacity="1"
@@ -42,7 +45,7 @@
  <metadata
    id="metadata3069"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata>
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata>
  <defs
    id="defs3067">
   <linearGradient
@@ -4070,15 +4073,24 @@
    id="hicg_background"
    d="M 88,48.000004 C 88,77.633851 77.635889,88 48,88 18.3641,88 8,77.633851 8,48.000004 8,18.365128 18.3641,8 48,8 77.635889,8 88,18.365128 88,48.000004 z"
    inkscape:connector-curvature="0"
-   style="fill:#ffa300;fill-opacity:1" /><path
+   style="fill:#ffa300;fill-opacity:1"
+   inkscape:export-filename="C:\dev\ostatni\Qt\morse\morse64.png"
+   inkscape:export-xdpi="72"
+   inkscape:export-ydpi="72" /><path
    id="hicg_highlight"
    d="M 47.99897,8 C 18.3641,8 8,18.365128 8,48.000004 8,77.633851 18.3641,88 47.99897,88 77.636918,88 88,77.633851 88,48.000004 88,18.365128 77.636918,8 47.99897,8 z m 0,79.000011 c -29.157949,0 -38.9979519,-9.841033 -38.9979519,-39.000006 0,-29.157953 9.8410319,-38.9989794 38.9979519,-38.9989794 29.158979,0 38.99897,9.8420524 38.99897,38.9989794 0,29.158973 -9.839991,39.000006 -38.99897,39.000006 z"
    inkscape:connector-curvature="0"
-   style="opacity:0.25;fill:#ffffff" /><path
+   style="opacity:0.25;fill:#ffffff"
+   inkscape:export-filename="C:\dev\ostatni\Qt\morse\morse64.png"
+   inkscape:export-xdpi="72"
+   inkscape:export-ydpi="72" /><path
    id="hicg_overlay"
    d="M 87.952825,48.000004 C 87.952825,77.633851 77.59385,88 47.976413,88 18.358975,88 8,77.633851 8,48.000004 8,18.365128 18.358975,8 47.976413,8 77.59385,8 87.952825,18.365128 87.952825,48.000004 z"
    style="opacity:0.20000000000000001;fill:url(#hicg_overlay_grad);fill-opacity:1"
-   inkscape:connector-curvature="0" /><path
+   inkscape:connector-curvature="0"
+   inkscape:export-filename="C:\dev\ostatni\Qt\morse\morse64.png"
+   inkscape:export-xdpi="72"
+   inkscape:export-ydpi="72" /><path
    sodipodi:type="arc"
    style="fill:#ffffff;fill-opacity:1;stroke:#ffffff"
    id="path3835"
@@ -4087,14 +4099,20 @@
    sodipodi:rx="4.9375"
    sodipodi:ry="4.9375"
    d="m 27.75,47.5625 a 4.9375,4.9375 0 1 1 -9.875,0 4.9375,4.9375 0 1 1 9.875,0 z"
-   transform="matrix(0.91954023,0,0,0.91954023,1.3979885,4.2643678)" /><rect
+   transform="matrix(0.91954023,0,0,0.91954023,1.3979885,4.2643678)"
+   inkscape:export-filename="C:\dev\ostatni\Qt\morse\morse64.png"
+   inkscape:export-xdpi="72"
+   inkscape:export-ydpi="72" /><rect
    style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.0023582;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"
    id="rect4605"
    width="28.997643"
    height="8.9976416"
    x="34.376179"
    y="43.501179"
-   ry="4.4988208" /><path
+   ry="4.4988208"
+   inkscape:export-filename="C:\dev\ostatni\Qt\morse\morse64.png"
+   inkscape:export-xdpi="72"
+   inkscape:export-ydpi="72" /><path
    sodipodi:type="arc"
    style="fill:#ffffff;fill-opacity:1;stroke:#ffffff"
    id="path3835-1"
@@ -4103,4 +4121,7 @@
    sodipodi:rx="4.9375"
    sodipodi:ry="4.9375"
    d="m 27.75,47.5625 a 4.9375,4.9375 0 1 1 -9.875,0 4.9375,4.9375 0 1 1 9.875,0 z"
-   transform="matrix(0.91954023,0,0,0.91954023,54.397988,4.2643678)" /></svg>
+   transform="matrix(0.91954023,0,0,0.91954023,54.397988,4.2643678)"
+   inkscape:export-filename="C:\dev\ostatni\Qt\morse\morse64.png"
+   inkscape:export-xdpi="72"
+   inkscape:export-ydpi="72" /></svg>

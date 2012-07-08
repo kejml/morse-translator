@@ -26,6 +26,9 @@ symbian:TARGET.CAPABILITY += NetworkServices
 # Speed up launching on MeeGo/Harmattan when using applauncherd daemon
 CONFIG += qdeclarative-boostable
 
+TRANSLATIONS = i18n/morse_cs.ts
+CODECFORTR = UTF-8
+
 # Add dependency to Symbian components
 # CONFIG += qt-components
 
@@ -44,3 +47,6 @@ OTHER_FILES += \
     qtc_packaging/debian_harmattan/control \
     qtc_packaging/debian_harmattan/compat \
     qtc_packaging/debian_harmattan/changelog
+
+RESOURCES += \
+    morse.qrc
