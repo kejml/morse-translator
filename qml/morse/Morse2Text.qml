@@ -14,6 +14,7 @@ Page {
     }
 
     Flickable {
+        id: flick
         width:parent.width
         anchors.top: header.bottom
         anchors.bottom: parent.bottom
@@ -96,7 +97,7 @@ Page {
             }
 
             CategoryHeading {
-                title: qsTr("Advanced")
+                title: qsTr("Swap symbols")
             }
 
             ButtonRow {
@@ -134,12 +135,15 @@ Page {
             Button {
                 id: allReplace
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("All replacement variants");
+                text: qsTr("All swap variants");
                 onClicked: appWindow.pageStack.push(Qt.resolvedUrl("AllVariants.qml"),{inputText:input.text, outputText:Translator.morse2allTexts(input.text)})
                     //allDialog.open();
             }
 
 
         }
+    }
+    ScrollDecorator {
+        flickableItem: flick
     }
 }

@@ -14,6 +14,7 @@ Page {
     }
 
     Flickable {
+        id: flick
         width:parent.width
         anchors.top: header.bottom
         anchors.bottom: parent.bottom
@@ -55,5 +56,8 @@ Page {
                 readOnly: true
             }
         }
+    }
+    ScrollDecorator {
+        flickableItem: flick
     }
 }

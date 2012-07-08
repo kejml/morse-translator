@@ -21,7 +21,7 @@
     <name>AllVariants</name>
     <message>
         <source>All possible variants</source>
-        <translation>Všechny možné kombinace</translation>
+        <translation type="obsolete">Všechny možné kombinace</translation>
     </message>
     <message>
         <source>Input</source>
@@ -30,6 +30,10 @@
     <message>
         <source>Outputs</source>
         <translation>Výstup</translation>
+    </message>
+    <message>
+        <source>All swap variants</source>
+        <translation>Všechny možné kombinace</translation>
     </message>
 </context>
 <context>
@@ -59,10 +63,18 @@
     </message>
     <message>
         <source>Advanced</source>
-        <translation>Pokročilé</translation>
+        <translation type="obsolete">Pokročilé</translation>
     </message>
     <message>
         <source>All replacement variants</source>
+        <translation type="obsolete">Všechny kombinace</translation>
+    </message>
+    <message>
+        <source>Swap symbols</source>
+        <translation>Prohodit symboly</translation>
+    </message>
+    <message>
+        <source>All swap variants</source>
         <translation>Všechny kombinace</translation>
     </message>
 </context>

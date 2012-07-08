@@ -24,12 +24,13 @@ Page {
 
     Header {
         id: header
-        title: qsTr("All possible variants")
+        title: qsTr("All swap variants")
         anchors.top: parent.top;
         z: 2
     }
 
     Flickable {
+        id: flick
         width:parent.width
         anchors.top: header.bottom
         anchors.bottom: parent.bottom
@@ -67,5 +68,8 @@ Page {
                 readOnly: true
             }
         }
+    }
+    ScrollDecorator {
+        flickableItem: flick
     }
 }
