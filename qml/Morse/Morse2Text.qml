@@ -12,18 +12,22 @@ Page {
         anchors.top: parent.top;
     }
 
-    Rectangle {
+    Column {
         id: wrapper
         width: parent.width;
-        color: "transparent"
         anchors.top: header.bottom;
         anchors.bottom: parent.bottom
         anchors.margins: UI.SMALL_MARGIN
+        spacing: UI.SMALL_MARGIN
+
+        CategoryHeading {
+            title: qsTr("Input")
+        }
 
         ButtonRow {
             id: buttons
-            anchors.top: parent.top
             anchors.margins: UI.SMALL_MARGIN
+            width: parent.width
             exclusive: false
             Button {
                 id: dot
@@ -48,22 +52,72 @@ Page {
             }
         }
 
-
         Label {
             id: input
-            anchors.top: buttons.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
+            width: parent.width
             onTextChanged: {
                 output.text = Translator.morse2text(text);
             }
         }
 
+        CategoryHeading {
+            title: qsTr("Output")
+        }
+
         Label {
             id: output
-            anchors.top: input.bottom
             width: parent.width
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         }
+
+        CategoryHeading {
+            title: qsTr("Advanced")
+        }
+
+        ButtonRow {
+            id: advButtons
+            anchors.margins: UI.SMALL_MARGIN
+            width: parent.width
+            exclusive: false
+            Button {
+                id: dotdash
+                text: ". <=> -"
+                onClicked: {
+                    var tmp = input.text.replace(/\./g,"*");
+                    tmp = tmp.replace(/\-/g,".");
+                    input.text = tmp.replace(/\*/g,"-");
+                }
+            }
+            Button {
+                id: dotpipe
+                text: ". <=> |"
+                onClicked: {
+                    var tmp = input.text.replace(/\./g,"*");
+                    tmp = tmp.replace(/\|/g,".");
+                    input.text = tmp.replace(/\*/g,"|");
+                }
+            }
+            Button {
+                id: dashpipe
+                text: "- <=> |"
+                onClicked: {
+                    var tmp = input.text.replace(/\-/g,"*");
+                    tmp = tmp.replace(/\|/g,"-");
+                    input.text = tmp.replace(/\*/g,"|");                }
+            }
+        }
+        Button {
+            id: allReplace
+            text: qsTr("All replacemnet variants");
+            onClicked: allDialog.open();
+        }
+
+        QueryDialog {
+            id: allDialog
+            title: qsTr("All replacemnet variants");
+            message: Translator.morse2allTexts(input.text)
+            acceptButtonText: qsTr("Ok");
+        }
+
     }
 }

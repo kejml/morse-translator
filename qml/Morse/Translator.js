@@ -52,3 +52,42 @@ function morse2text(input) {
     };
     return output;
 }
+
+function morse2allTexts(input) {
+    var output = "";
+    output+=morse2text(input)+"\n";     // . - |
+
+    var tmp = input.replace(/\./g,"*");
+    tmp = tmp.replace(/\-/g,".");
+    tmp = tmp.replace(/\*/g,"-");
+
+    output+=morse2text(tmp)+"\n";       // - . |
+
+    tmp = tmp.replace(/\./g,"*");
+    tmp = tmp.replace(/\|/g,".");
+    tmp = tmp.replace(/\*/g,"|");
+
+    output+=morse2text(tmp)+"\n";       // - | .
+
+    tmp = tmp.replace(/\./g,"*");
+    tmp = tmp.replace(/\-/g,".");
+    tmp = tmp.replace(/\*/g,"-");
+
+    output+=morse2text(tmp)+"\n";       // . | -
+
+    tmp = tmp.replace(/\./g,"*");
+    tmp = tmp.replace(/\|/g,".");
+    tmp = tmp.replace(/\*/g,"|");
+
+    output+=morse2text(tmp)+"\n";       // | . -
+
+    tmp = tmp.replace(/\./g,"*");
+    tmp = tmp.replace(/\-/g,".");
+    tmp = tmp.replace(/\*/g,"-");
+
+    output+=morse2text(tmp)+"\n";       // | - .
+
+    return output
+
+}
+
