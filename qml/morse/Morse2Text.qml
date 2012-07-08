@@ -106,7 +106,7 @@ Page {
                 exclusive: false
                 Button {
                     id: dotdash
-                    text: ". <=> -"
+                    text: ". \u2194 -"
                     onClicked: {
                         var tmp = input.text.replace(/\./g,"*");
                         tmp = tmp.replace(/\-/g,".");
@@ -115,7 +115,7 @@ Page {
                 }
                 Button {
                     id: dotpipe
-                    text: ". <=> |"
+                    text: ". \u2194 |"
                     onClicked: {
                         var tmp = input.text.replace(/\./g,"*");
                         tmp = tmp.replace(/\|/g,".");
@@ -124,7 +124,7 @@ Page {
                 }
                 Button {
                     id: dashpipe
-                    text: "- <=> |"
+                    text: "- \u2194 |"
                     onClicked: {
                         var tmp = input.text.replace(/\-/g,"*");
                         tmp = tmp.replace(/\|/g,"-");

@@ -36,11 +36,11 @@
     <name>MainPage</name>
     <message>
         <source>Text2Morse</source>
-        <translation>Text do Morse</translation>
+        <translation>Text → Morse</translation>
     </message>
     <message>
         <source>Morse2Text</source>
-        <translation>Morse na text</translation>
+        <translation>Morse → text</translation>
     </message>
 </context>
 <context>
