@@ -1,0 +1,12 @@
+.pragma library
+
+var MAIN_COLOR="#FF0000";
+var HEADER_TEXT_COLOR="#FFFFFF";
+
+var HEADER_MARGIN=18;
+
+var SMALL_MARGIN=8;
+
+function func() {
+    
+}
