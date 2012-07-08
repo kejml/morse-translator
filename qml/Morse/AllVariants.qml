@@ -6,9 +6,25 @@ import "Translator.js" as Translator
 Page {
     anchors.fill: parent;
 
+    property alias inputText: input.text
+    property alias outputText: output.text
+
+    tools {
+        ToolBarLayout {
+            ToolIcon {
+                platformIconId: "toolbar-back"
+                onClicked: appWindow.pageStack.pop();
+            }
+            ToolIcon {
+                platformIconId: "toolbar-view-menu"
+                onClicked: (myMenu.status === DialogStatus.Closed) ? myMenu.open() : myMenu.close()
+            }
+        }
+    }
+
     Header {
         id: header
-        title: qsTr("Text2Morse")
+        title: qsTr("All possible variants")
         anchors.top: parent.top;
         z: 2
     }
@@ -35,23 +51,19 @@ Page {
 
             TextArea {
                 id: input
-                placeholderText: qsTr("Text to translate")
-                anchors.left: parent.left
-                anchors.right: parent.right
-                inputMethodHints: Qt.ImhNoPredictiveText
-                onTextChanged: {
-                    output.text = Translator.text2morse(text);
-                }
+                width: parent.width
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                readOnly: true
             }
 
             CategoryHeading {
-                title: qsTr("Output")
+                title: qsTr("Outputs")
             }
 
             TextArea {
                 id: output
                 width: parent.width
-                wrapMode: Text.WrapAnywhere
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 readOnly: true
             }
         }

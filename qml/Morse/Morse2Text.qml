@@ -10,114 +10,135 @@ Page {
         id: header
         title: qsTr("Morse2Text")
         anchors.top: parent.top;
+        z: 2
     }
 
-    Column {
-        id: wrapper
-        width: parent.width;
-        anchors.top: header.bottom;
+    Flickable {
+        width:parent.width
+        anchors.top: header.bottom
         anchors.bottom: parent.bottom
+        contentHeight: wrapper.height
+        z: 1
         anchors.margins: UI.SMALL_MARGIN
-        spacing: UI.SMALL_MARGIN
 
-        CategoryHeading {
-            title: qsTr("Input")
-        }
-
-        ButtonRow {
-            id: buttons
+        Column {
+            id: wrapper
             anchors.margins: UI.SMALL_MARGIN
-            width: parent.width
-            exclusive: false
-            Button {
-                id: dot
-                text: "."
-                onClicked: {
-                    input.text += "."
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: parent.top
+            spacing: UI.SMALL_MARGIN
+
+            CategoryHeading {
+                title: qsTr("Input")
+            }
+
+            ButtonRow {
+                id: buttons
+                anchors.margins: UI.SMALL_MARGIN
+                width: parent.width
+                exclusive: false
+                Button {
+                    id: dot
+                    text: "."
+                    onClicked: {
+                        input.text += "."
+                    }
+                }
+                Button {
+                    id: dash
+                    text: "-"
+                    onClicked: {
+                        input.text += "-"
+                    }
+                }
+                Button {
+                    id: pipe
+                    text: "|"
+                    onClicked: {
+                        input.text += "|"
+                    }
+                }
+                Button {
+                    id: backspace
+                    iconSource: "image://theme/icon-m-toolbar-backspace"
+                    onClicked: {
+                        input.text = input.text.slice(0,-1);
+                    }
+                }
+            }
+
+            TextArea {
+                id: input
+                width: parent.width
+                readOnly: true
+                onTextChanged: {
+                    output.text = Translator.morse2text(text);
+                }
+            }
+
+            CategoryHeading {
+                title: qsTr("Output")
+            }
+
+            TextArea {
+                id: output
+                width: parent.width
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                readOnly: true
+            }
+
+            CategoryHeading {
+                title: qsTr("Advanced")
+            }
+
+            ButtonRow {
+                id: advButtons
+                anchors.margins: UI.SMALL_MARGIN
+                width: parent.width
+                exclusive: false
+                Button {
+                    id: dotdash
+                    text: ". <=> -"
+                    onClicked: {
+                        var tmp = input.text.replace(/\./g,"*");
+                        tmp = tmp.replace(/\-/g,".");
+                        input.text = tmp.replace(/\*/g,"-");
+                    }
+                }
+                Button {
+                    id: dotpipe
+                    text: ". <=> |"
+                    onClicked: {
+                        var tmp = input.text.replace(/\./g,"*");
+                        tmp = tmp.replace(/\|/g,".");
+                        input.text = tmp.replace(/\*/g,"|");
+                    }
+                }
+                Button {
+                    id: dashpipe
+                    text: "- <=> |"
+                    onClicked: {
+                        var tmp = input.text.replace(/\-/g,"*");
+                        tmp = tmp.replace(/\|/g,"-");
+                        input.text = tmp.replace(/\*/g,"|");                }
                 }
             }
             Button {
-                id: dash
-                text: "-"
-                onClicked: {
-                    input.text += "-"
-                }
+                id: allReplace
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("All replacement variants");
+                onClicked: appWindow.pageStack.push(Qt.resolvedUrl("AllVariants.qml"),{inputText:input.text, outputText:Translator.morse2allTexts(input.text)})
+                    //allDialog.open();
             }
-            Button {
-                id: pipe
-                text: "|"
-                onClicked: {
-                    input.text += "|"
-                }
-            }
-        }
 
-        Label {
-            id: input
-            width: parent.width
-            onTextChanged: {
-                output.text = Translator.morse2text(text);
-            }
-        }
 
-        CategoryHeading {
-            title: qsTr("Output")
         }
-
-        Label {
-            id: output
-            width: parent.width
-            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        }
-
-        CategoryHeading {
-            title: qsTr("Advanced")
-        }
-
-        ButtonRow {
-            id: advButtons
-            anchors.margins: UI.SMALL_MARGIN
-            width: parent.width
-            exclusive: false
-            Button {
-                id: dotdash
-                text: ". <=> -"
-                onClicked: {
-                    var tmp = input.text.replace(/\./g,"*");
-                    tmp = tmp.replace(/\-/g,".");
-                    input.text = tmp.replace(/\*/g,"-");
-                }
-            }
-            Button {
-                id: dotpipe
-                text: ". <=> |"
-                onClicked: {
-                    var tmp = input.text.replace(/\./g,"*");
-                    tmp = tmp.replace(/\|/g,".");
-                    input.text = tmp.replace(/\*/g,"|");
-                }
-            }
-            Button {
-                id: dashpipe
-                text: "- <=> |"
-                onClicked: {
-                    var tmp = input.text.replace(/\-/g,"*");
-                    tmp = tmp.replace(/\|/g,"-");
-                    input.text = tmp.replace(/\*/g,"|");                }
-            }
-        }
-        Button {
-            id: allReplace
-            text: qsTr("All replacemnet variants");
-            onClicked: allDialog.open();
-        }
-
-        QueryDialog {
-            id: allDialog
-            title: qsTr("All replacemnet variants");
-            message: Translator.morse2allTexts(input.text)
-            acceptButtonText: qsTr("Ok");
-        }
-
+    }
+    QueryDialog {
+        id: allDialog
+        title: qsTr("All replacemnet variants");
+        message: Translator.morse2allTexts(input.text)
+        acceptButtonText: qsTr("Ok");
     }
 }
