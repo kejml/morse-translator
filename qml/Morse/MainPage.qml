@@ -12,11 +12,11 @@ Page {
         ButtonRow {
             style: TabButtonStyle { }
             TabButton {
-                iconSource: "image://theme/icon-m-toolbar-favorite-mark" + (theme.inverted ? "-white" : "")
+                text: qsTr("Text2Morse")
                 tab: tabText2Morse
             }
             TabButton {
-                iconSource: "image://theme/icon-m-toolbar-list" + (theme.inverted ? "-white" : "")
+                text: qsTr("Morse2Text")
                 tab: tabMorse2Text
             }
         }
