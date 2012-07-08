@@ -1,1 +1,1 @@
-lupdate qml\ -ts i18n/morse_cs.ts
+lupdate.exe qml\ -ts i18n/morse_cs.ts
