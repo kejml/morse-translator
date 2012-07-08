@@ -30,7 +30,7 @@ Page {
         Label {
             id: subtitle
             anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Verze:")+" 1.0.0"
+            text: qsTr("Version:")+" 1.0.0"
             font.pixelSize: 24
         }
         Label {
