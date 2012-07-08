@@ -4,10 +4,10 @@ import "UIconstants.js" as UI
 import "Translator.js" as Translator
 
 Page {
-    tools: commonTools2
+    tools: commonTools
 
     ToolBarLayout {
-        id: commonTools2
+        id: commonTools
         visible: true
         ButtonRow {
             style: TabButtonStyle { }
@@ -30,10 +30,6 @@ Page {
     TabGroup {
         id: tabGroup
         currentTab: tabText2Morse
-
-        /*onCurrentTabChanged: {
-            console.log("Tab cahnge");
-        }*/
 
         Text2Morse {
             id: tabText2Morse
