@@ -30,7 +30,7 @@ Page {
             spacing: UI.SMALL_MARGIN
 
             CategoryHeading {
-                title: qsTr("Input")
+                title: qsTr("Text")
             }
 
             TextArea {
@@ -45,7 +45,7 @@ Page {
             }
 
             CategoryHeading {
-                title: qsTr("Output")
+                title: qsTr("Morse Code")
             }
 
             TextArea {

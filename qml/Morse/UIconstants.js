@@ -1,6 +1,6 @@
 .pragma library
 
-var MAIN_COLOR="#FF0000";
+var MAIN_COLOR="#ffa300";
 var HEADER_TEXT_COLOR="#FFFFFF";
 
 var HEADER_MARGIN=18;

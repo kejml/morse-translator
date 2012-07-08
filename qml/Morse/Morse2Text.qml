@@ -30,7 +30,7 @@ Page {
             spacing: UI.SMALL_MARGIN
 
             CategoryHeading {
-                title: qsTr("Input")
+                title: qsTr("Morse Code")
             }
 
             ButtonRow {
@@ -65,6 +65,13 @@ Page {
                     onClicked: {
                         input.text = input.text.slice(0,-1);
                     }
+                    /*MouseArea {
+                        anchors.fill: parent
+                        onPressAndHold: input.text = "";
+                        onClicked: parent.clicked()
+                        onPressed: parent.checked=true
+                        onReleased: parent.checked=false
+                    }*/
                 }
             }
 
@@ -78,7 +85,7 @@ Page {
             }
 
             CategoryHeading {
-                title: qsTr("Output")
+                title: qsTr("Text")
             }
 
             TextArea {
@@ -134,11 +141,5 @@ Page {
 
 
         }
-    }
-    QueryDialog {
-        id: allDialog
-        title: qsTr("All replacemnet variants");
-        message: Translator.morse2allTexts(input.text)
-        acceptButtonText: qsTr("Ok");
     }
 }
