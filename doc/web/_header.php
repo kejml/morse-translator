@@ -15,7 +15,7 @@
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-167100-5']);
-  _gaq.push(['_setDomainName', '.kejml.eu']);
+  //_gaq.push(['_setDomainName', '.kejml.eu']);
   _gaq.push(['_trackPageview']);
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
