@@ -85,6 +85,38 @@ Page {
                 }
             }
 
+            ButtonRow {
+                id: clipboardButtons
+                anchors.margins: UI.SMALL_MARGIN
+                width: parent.width
+                exclusive: false
+                Button {
+                    id: copyButton
+                    text: qsTr("Copy")
+                    onClicked: {
+                        input.selectAll();
+                        input.copy();
+                        input.select(0,0);
+                    }
+                }
+                Button {
+                    id: pasteButton
+                    text: qsTr("Paste")
+                    onClicked: {
+                        input.readOnly = false;
+                        input.paste();
+                        input.readOnly = true;
+                    }
+                }
+                Button {
+                    id: deleteButton
+                    text: qsTr("Delete")
+                    onClicked: {
+                        input.text = ""
+                    }
+                }
+            }
+
             CategoryHeading {
                 title: qsTr("Text")
             }
@@ -94,6 +126,16 @@ Page {
                 width: parent.width
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 readOnly: true
+            }
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                id: copy
+                text: qsTr("Copy to clipboard")
+                onClicked: {
+                    output.selectAll();
+                    output.copy();
+                    output.select(0,0);
+                }
             }
 
             CategoryHeading {

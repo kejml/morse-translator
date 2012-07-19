@@ -55,6 +55,16 @@ Page {
                 wrapMode: Text.WrapAnywhere
                 readOnly: true
             }
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                id: copy
+                text: qsTr("Copy to clipboard")
+                onClicked: {
+                    output.selectAll();
+                    output.copy();
+                    output.select(0,0);
+                }
+            }
         }
     }
     ScrollDecorator {

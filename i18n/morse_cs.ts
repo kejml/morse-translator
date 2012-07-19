@@ -77,6 +77,22 @@
         <source>All swap variants</source>
         <translation>Všechny kombinace</translation>
     </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopírovat</translation>
+    </message>
+    <message>
+        <source>Paste</source>
+        <translation>Vložit</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Smazat</translation>
+    </message>
+    <message>
+        <source>Copy to clipboard</source>
+        <translation>Kopírovat do schránky</translation>
+    </message>
 </context>
 <context>
     <name>Text2Morse</name>
@@ -95,6 +111,10 @@
     <message>
         <source>Morse Code</source>
         <translation>Morseovka</translation>
+    </message>
+    <message>
+        <source>Copy to clipboard</source>
+        <translation>Kopírovat do schránky</translation>
     </message>
 </context>
 <context>

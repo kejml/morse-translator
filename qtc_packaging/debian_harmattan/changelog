@@ -1,3 +1,8 @@
+kejml-morse (1.1.0) unstable; urgency=low
+  * Added clipboard support
+
+ -- unknown <>  Fri, 20 Jul 2012 00:41:43 +0200
+
 kejml-morse (1.0.0) unstable; urgency=low
   * First public release
 
