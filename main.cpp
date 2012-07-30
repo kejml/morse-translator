@@ -2,6 +2,8 @@
 #include "qmlapplicationviewer.h"
 #include <QTranslator> // include QTranslator
 #include <QLocale> // include QLocale
+#include "torch.h"
+#include <QtDeclarative>
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
@@ -14,6 +16,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     translator.load(QString("i18n/morse_") + locale.name().split('_').first(),":/");
 
     app->installTranslator(&translator);
+
+    qmlRegisterType<torch, 1>("Torch", 1, 0, "Torch");
 
     QmlApplicationViewer viewer;
     viewer.setOrientation(QmlApplicationViewer::ScreenOrientationAuto);

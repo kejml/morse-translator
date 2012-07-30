@@ -1,5 +1,6 @@
 import QtQuick 1.1
 import com.nokia.meego 1.0
+import Torch 1.0
 import "UIconstants.js" as UI
 import "Translator.js" as Translator
 
@@ -65,9 +66,31 @@ Page {
                     output.select(0,0);
                 }
             }
+
+            CategoryHeading {
+                title: qsTr("Send message")
+            }
+            ButtonRow {
+                id: sendButtons
+                exclusive: false
+
+                Button {
+                    id: ledButton
+                    text: qsTr("LED")
+                }
+                Button {
+                    id: beepButton
+                    text: qsTr("Beep")
+                }
+
+            }
         }
     }
     ScrollDecorator {
         flickableItem: flick
+    }
+    Torch {
+        id: mTorch
+        //onStatusChanged: mButton.text = on ? "Switch OFF" : "Switch ON";
     }
 }
