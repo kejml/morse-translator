@@ -48,7 +48,7 @@ function morse2text(input) {
     var bpos=0;
     var letter;
     var dits;
-    var cyrilic = getSetting("cyrilic");
+    var cyrillic = getSetting("cyrillic");
     while(bpos<input.length) {
         bpos=input.indexOf("|",apos);
         if(bpos<0) {
@@ -58,7 +58,7 @@ function morse2text(input) {
         apos=bpos+1;letter="";
         for(var j=0;j<morse.length;j++) {
             if(dits==morse[j]) {
-                letter = (cyrilic=="true" ? alphabetC.charAt(j) : alphabet.charAt(j) );
+                letter = (cyrillic=="true" ? alphabetC.charAt(j) : alphabet.charAt(j) );
             }
         };
         if(letter==""){letter="*"};
