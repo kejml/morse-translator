@@ -1,5 +1,5 @@
 kejml-morse (1.2.0) unstable; urgency=low
-  * Support for input in cyrilic
+  * Support for input and output in cyrilic
 
  -- unknown <>  Thu, 02 Aug 2012 22:55:16 +0200
 

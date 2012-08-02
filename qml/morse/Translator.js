@@ -1,5 +1,7 @@
 .pragma library
 
+Qt.include("storage.js");
+
 var morse=new Array(
 "","*","|",".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",
 ".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--..","-----",".----","..---","...--","....-",
@@ -7,7 +9,7 @@ var morse=new Array(
             ".-.-.-","-..-.","---...","-.-.-.","-....-","..--..",".--.-.","---.","..-..","..--",".-.-","----"
 );
 var alphabet=' *|ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!"(),-./:;=?@ÖËÜÄ*';
-var alphabetR=' *|АБЦДЕФГХИЙКЛМНОПЩРСТУЖВЬЫЗ0123456789!"(),-./:;=?@ЧЭЮЯШ';
+var alphabetC=' *|АБЦДЕФГХИЙКЛМНОПЩРСТУЖВЬЫЗ0123456789!"(),-./:;=?@ЧЭЮЯШ';
 
 function text2morse(input) {
     var output="";
@@ -22,7 +24,7 @@ function text2morse(input) {
         };
         if (!found) {
             for(var j=0;j<morse.length;j++){
-                if(letter==alphabetR.charAt(j)){
+                if(letter==alphabetC.charAt(j)){
                     output+=morse[j];
                     found=true;
                 }
@@ -46,6 +48,7 @@ function morse2text(input) {
     var bpos=0;
     var letter;
     var dits;
+    var cyrilic = getSetting("cyrilic");
     while(bpos<input.length) {
         bpos=input.indexOf("|",apos);
         if(bpos<0) {
@@ -55,7 +58,7 @@ function morse2text(input) {
         apos=bpos+1;letter="";
         for(var j=0;j<morse.length;j++) {
             if(dits==morse[j]) {
-                letter=alphabet.charAt(j)
+                letter = (cyrilic=="true" ? alphabetC.charAt(j) : alphabet.charAt(j) );
             }
         };
         if(letter==""){letter="*"};
