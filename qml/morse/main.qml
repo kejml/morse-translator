@@ -29,4 +29,14 @@ PageStackWindow {
             }
         }
     }
+    Menu {
+        id: settingsMenu
+        visualParent: pageStack
+        MenuLayout {
+            MenuItem {
+                text: qsTr("About")
+                onClicked: appWindow.pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
+            }
+        }
+    }
 }
