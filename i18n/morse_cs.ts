@@ -95,6 +95,17 @@
     </message>
 </context>
 <context>
+    <name>SettingsPage</name>
+    <message>
+        <source>Translate Morse to Cyrilic</source>
+        <translation>Překládat morseovku do azbuky</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nastavení</translation>
+    </message>
+</context>
+<context>
     <name>Text2Morse</name>
     <message>
         <source>Text2Morse</source>
@@ -122,6 +133,10 @@
     <message>
         <source>About</source>
         <translation>O aplikaci</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nastavení</translation>
     </message>
 </context>
 </TS>
