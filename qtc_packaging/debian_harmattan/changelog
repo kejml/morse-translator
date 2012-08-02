@@ -1,3 +1,8 @@
+kejml-morse (1.2.0) unstable; urgency=low
+  * Support for input in cyrilic
+
+ -- unknown <>  Thu, 02 Aug 2012 22:55:16 +0200
+
 kejml-morse (1.1.0) unstable; urgency=low
   * Added clipboard support
 
