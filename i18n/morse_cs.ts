@@ -98,11 +98,15 @@
     <name>SettingsPage</name>
     <message>
         <source>Translate Morse to Cyrilic</source>
-        <translation>Překládat morseovku do azbuky</translation>
+        <translation type="obsolete">Překládat morseovku do azbuky</translation>
     </message>
     <message>
         <source>Settings</source>
         <translation>Nastavení</translation>
+    </message>
+    <message>
+        <source>Translate Morse to Cyrillic</source>
+        <translation>Překládat morseovku do azbuky</translation>
     </message>
 </context>
 <context>
@@ -126,6 +130,18 @@
     <message>
         <source>Copy to clipboard</source>
         <translation>Kopírovat do schránky</translation>
+    </message>
+    <message>
+        <source>Send message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LED</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Beep</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

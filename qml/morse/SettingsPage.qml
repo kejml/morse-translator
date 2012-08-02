@@ -37,26 +37,26 @@ Page{
             }
 */
             Item {
-                id: useCyrilic
+                id: useCyrillic
                 anchors.margins: UI.SMALL_MARGIN
                 width: parent.width
-                height: cyrilicLabel.height
+                height: cyrillicLabel.height
 
                 Label {
-                    id: cyrilicLabel
+                    id: cyrillicLabel
                     anchors.left: parent.left
                     anchors.margins: UI.SMALL_MARGIN
-                    text: qsTr("Translate Morse to Cyrilic")
+                    text: qsTr("Translate Morse to Cyrillic")
                 }
 
                 CheckBox {
-                    id: cyrilicCheckbox
+                    id: cyrillicCheckbox
                     anchors.right: parent.right
                     anchors.margins: UI.SMALL_MARGIN
                     onCheckedChanged: {
-                        Storage.setSetting("cyrilic", cyrilicCheckbox.checked)
+                        Storage.setSetting("cyrillic", cyrillicCheckbox.checked)
                     }
-                    checked: ( Storage.getSetting("cyrilic") )
+                    checked: ( Storage.getSetting("cyrillic") )
                 }
             }
 
