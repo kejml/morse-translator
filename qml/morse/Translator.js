@@ -1,12 +1,15 @@
 .pragma library
 
+Qt.include("storage.js");
+
 var morse=new Array(
 "","*","|",".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",
 ".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--..","-----",".----","..---","...--","....-",
             ".....","-....","--...","---..","----.","--..--",".-..-","-.--.-","-.--.-","--..--","-....-",
-            ".-.-.-","-..-.","---...","-.-.-.","-....-","..--..",".--.-."
+            ".-.-.-","-..-.","---...","-.-.-.","-....-","..--..",".--.-.","---.","..-..","..--",".-.-","----"
 );
-var alphabet=' *|ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!"(),-./:;=?@';
+var alphabet=' *|ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!"(),-./:;=?@ÖËÜÄ*';
+var alphabetC=' *|АБЦДЕФГХИЙКЛМНОПЩРСТУЖВЬЫЗ0123456789!"(),-./:;=?@ЧЭЮЯШ';
 
 function text2morse(input) {
     var output="";
@@ -19,6 +22,15 @@ function text2morse(input) {
                 found=true;
             }
         };
+        if (!found) {
+            for(var j=0;j<morse.length;j++){
+                if(letter==alphabetC.charAt(j)){
+                    output+=morse[j];
+                    found=true;
+                }
+            };
+
+        }
         if (!found) {
             output += "<span class=\"notFound\">*</span>"
         }
@@ -36,6 +48,7 @@ function morse2text(input) {
     var bpos=0;
     var letter;
     var dits;
+    var cyrilic = getSetting("cyrilic");
     while(bpos<input.length) {
         bpos=input.indexOf("|",apos);
         if(bpos<0) {
@@ -45,7 +58,7 @@ function morse2text(input) {
         apos=bpos+1;letter="";
         for(var j=0;j<morse.length;j++) {
             if(dits==morse[j]) {
-                letter=alphabet.charAt(j)
+                letter = (cyrilic=="true" ? alphabetC.charAt(j) : alphabet.charAt(j) );
             }
         };
         if(letter==""){letter="*"};

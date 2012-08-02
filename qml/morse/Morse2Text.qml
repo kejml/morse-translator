@@ -4,7 +4,15 @@ import "UIconstants.js" as UI
 import "Translator.js" as Translator
 
 Page {
+    id: morse2Text
     anchors.fill: parent;
+
+    onStatusChanged: {
+        if (status == PageStatus.Activating) {
+            input.text+=" ";
+            input.text=input.text.trim()
+        }
+    }
 
     Header {
         id: header
