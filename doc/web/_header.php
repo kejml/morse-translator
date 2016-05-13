@@ -6,8 +6,8 @@
     <meta name="keywords" content="meeneyx" />		     
     <title>Morse Translator     
     </title>		     
-    <link href="http://fonts.googleapis.com/css?family=Antic" rel="stylesheet" type="text/css" />		     
-    <link href="http://fonts.googleapis.com/css?family=Shanti" rel="stylesheet" type="text/css" />          
+    <link href="//fonts.googleapis.com/css?family=Antic" rel="stylesheet" type="text/css" />		     
+    <link href="//fonts.googleapis.com/css?family=Shanti" rel="stylesheet" type="text/css" />          
 <script src="js/jquery-1.7.2.min.js"></script>       
 <script src="js/lightbox.js"></script>       		     
     <link rel="stylesheet" type="text/css" href="css/style.css" />         
